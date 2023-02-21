@@ -1,4 +1,4 @@
-# Web-APIs-Challenge-Code-Quiz
+# Zach's Code Quiz
 
 ## By Zach Hanson
 
