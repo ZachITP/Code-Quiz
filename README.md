@@ -7,8 +7,9 @@
 This website relies heavily on Javascript to bring you The coding quiz! Put your coding skills to the test. Answer as many questions as you can before time runs out.
 A great game while you are bored at work or just wanna have fun. Check and see how you rank against other players and compete for bragging rights. click the link below to play!
 
-<img src="./Assets/Start Game.png" alt="Homes screen" title="Start Game">
-
+<img src="./Assets/Start.png" alt="Start" title="Start">
+<img src="./Assets/Questions.png" alt="Questions" title="Questions">
+<img src="./Assets/wrong.png" alt="wrong" title="wrong">
 
 ## Usage
 
