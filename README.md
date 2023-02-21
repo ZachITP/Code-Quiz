@@ -28,7 +28,7 @@ CSS,
 ## Credits
 
 ## website
-Check it out for yourself! https://zachitp.github.io/Code-Quiz/
+Check it out for yourself! https://zachitp.github.io/Zach-s-Code-Quiz/
 
 
 ## Support

@@ -31,10 +31,8 @@ function setTime() {
 
 
 }
-
-
-
 setTime();
+
 
 //Quiz Questions and answers
 let questions = [
@@ -101,7 +99,6 @@ function checkAnswer (event) {
     if (!answer.matches (".choice-text")){
         return
     }
-
     if (answer.value !== questions[questionCounter].answer){
         secondsLeft-= 10;
         if (secondsLeft < 0){
