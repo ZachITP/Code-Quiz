@@ -1,5 +1,7 @@
 const question = document.querySelector( '#question')
 const choices = Array.from(document.querySelectorAll('.choice-text'))
+//const choices = document.querySelectorAll('.choice-container')
+//console.log("CHOICE: ", choices);
 const progressText = document.querySelector( '#progressText')
 const ScoreText = document.querySelector( '#score')
 const progressBarFull = document.querySelector( '#progressBarFull')
@@ -9,7 +11,7 @@ let acceptingAnswers = true
 let score = 0
 let questionCounter = 0
 let availableQuestions = []
-
+let retrievedObject = JSON.parse(window.localStorage.getItem('results'));
 // Selects element by class
 var timeEl = document.querySelector(".time");
 
@@ -74,12 +76,12 @@ let questions = [
 
 startGame = () => {
     questionCounter = 0
-    score = 0
+    score = 
     availableQuestions = [...questions]
     getNewQuestion()
 }
 
-getNewQuestion = () => {
+const getNewQuestion = () => {
     var currentQuestion = questions [questionCounter]
     question.textContent = currentQuestion.question
     choices.forEach(choice => {
@@ -96,13 +98,15 @@ getNewQuestion = () => {
 //check answer and subtract time if answer is wrong
 function checkAnswer (event) {
     var answer= event.target
+    console.log("TARGET: ", answer.textContent);
     if (!answer.matches (".choice-text")){
-        return
+       return ("right")
     }
-    if (answer.value !== questions[questionCounter].answer){
+    if (answer.textContent !== questions[questionCounter].answer){
         secondsLeft-= 10;
         if (secondsLeft < 0){
             secondsLeft = 0
+           location.href = "highscore.html";
         }
         timeEl.textContent = secondsLeft
         setTimeout(function(){
@@ -117,7 +121,8 @@ function checkAnswer (event) {
     }
     questionCounter++
     if (secondsLeft<=0 || questionCounter===questions.length){
-     
+        secondsLeft = 0
+        location.href = "highscore.html";
     }
     else{
         getNewQuestion()
@@ -125,12 +130,37 @@ function checkAnswer (event) {
 }
 
 
-document.querySelector(".choice-text") .addEventListener("click", checkAnswer)
+document.querySelector(".choice-container") .addEventListener("click", checkAnswer)
 incrementScore = num => {
     score +=num
     scoreText.innerText = score
 }
 
+
+
+if(!retrievedObject ){
+alert('Empty, initializing');
+retrievedObject  = [];
+}
+
+retrievedObject.push('quiz.results' + retrievedObject.length);
+window.localStorage.setItem('results', JSON.stringify(retrievedObject));
+
+
+var scoreArr = []
+var userScore = {
+    //variable that holds initials
+    //variable thats holds timeleft
+}
+scoreArr.push(userScore)
+localStorage.setItem("Score", JSON.stringify(scoreArr));
+
+//for (let i = 0; i < scoreArr; i++) {
+   // const element = array[i];
+  // var btn = document.createElement("button")
+    
+//}
+
 startGame()
 
-localStorage.setItem('keyName', input.value);
+//localStorage.setItem('keyName', input.value);

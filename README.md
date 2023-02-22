@@ -13,7 +13,7 @@ A great game while you are bored at work or just wanna have fun. Check and see h
 
 ## Usage
 
-1. Using a browser open up the link
+1. Open the link in a browser
 2. Test your skills by taking the coding quiz
 
 
@@ -26,6 +26,7 @@ CSS,
 
 
 ## Credits
+Thank you UTSA Tutors Andrew Mason and Dennis Itua for helping me out with this project
 
 ## website
 Check it out for yourself! https://zachitp.github.io/Zach-s-Code-Quiz/
